@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 function Reservations(props) {
   const allReservationsToRender = props.allReservations.map(reservation => {
     return (
-      <section>
+      <section key={reservation.id}>
         <h1>{reservation.name}</h1>
         <h3>{reservation.date}</h3>
         <h3>{reservation.time}</h3>
@@ -15,8 +15,8 @@ function Reservations(props) {
   return <section>{allReservationsToRender}</section>
 }
 
-// Reservations.PropTypes = {
-//   allReservations: PropTypes.array
-// }
+Reservations.propTypes = {
+  allReservations: PropTypes.array
+}
 
 export default Reservations;
