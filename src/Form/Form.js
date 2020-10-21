@@ -1,4 +1,3 @@
-const { Component } = require("react");
 import React, { Component } from 'react';
 
 class Form extends Component {
@@ -12,8 +11,20 @@ class Form extends Component {
     }
   }
 
+  updateValue = (event) => {
+    this.setState({[event.target.name]: event.target.value})
+  }
+  
   render() {
-
+    return (
+      <section>
+        <input name="name" placeholder="name" onChange={this.updateValue}></input>
+        <input name="date" placeholder="date" onChange={this.updateValue}></input>
+        <input name="time" placeholder="time" onChange={this.updateValue}></input>
+        <input name="number" placeholder="number of guests" onChange={this.updateValue}></input>
+        <button>Make Reservation</button>
+      </section>
+    )
   }
 }
 
