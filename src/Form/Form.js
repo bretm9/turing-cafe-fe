@@ -17,7 +17,6 @@ class Form extends Component {
 
   submitReservation = () => {
     const newReservation = {
-      id: Date.now(),
       name: this.state.name,
       date: this.state.date,
       time: this.state.time,
