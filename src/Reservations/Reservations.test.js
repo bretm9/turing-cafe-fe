@@ -9,8 +9,8 @@ describe('Reservations', () => {
       "id": 1,
       "name": "Bret",
       "date": "12/20",
-      "time": "6:00",
-      "number": 4
+      "time": "6:01",
+      "number": 12345
       },
       {
       "id": 2,
@@ -28,7 +28,7 @@ describe('Reservations', () => {
   it('should render a Reservation', () => {
     expect(screen.getByText('Bret')).toBeInTheDocument();
     expect(screen.getByText('12/20')).toBeInTheDocument();
-    expect(screen.getByText('6:00')).toBeInTheDocument();
-    expect(screen.getByText('Number of guests: 4')).toBeInTheDocument();
+    expect(screen.getByText('6:01')).toBeInTheDocument();
+    expect(screen.getByText('Number of guests: 12345')).toBeInTheDocument();
   })
 })
