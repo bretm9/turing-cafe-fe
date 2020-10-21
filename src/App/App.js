@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getReservations } from '../apiCalls';
+import { getReservations, postReservation } from '../apiCalls';
 import Reservations from '../Reservations/Reservations';
 import Form from '../Form/Form';
 import './App.css';
@@ -18,8 +18,9 @@ class App extends Component {
     .then(data => this.setState({ allReservations: data }))
   }
 
-  addNewReservation = (newReservation) => {
-    this.setState({ allReservations: [... this.state.allReservations, newReservation] })
+  addNewReservation = async (newReservation) => {
+    const recievedReservation = await postReservation(newReservation)
+    this.setState({ allReservations: [... this.state.allReservations, recievedReservation] })
   }
 
   render() {
