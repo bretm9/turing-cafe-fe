@@ -12,7 +12,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({ allReservations: getReservations() })
+    getReservations()
+    .then(response => response.json())
+    .then(data => this.setState({ allReservations: data }))
   }
 
   render() {
