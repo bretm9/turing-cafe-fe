@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { getReservations } from '../apiCalls';
 import Reservations from '../Reservations/Reservations';
 import './App.css';
 
@@ -9,6 +10,11 @@ class App extends Component {
       allReservations: []
     }
   }
+
+  componentDidMount() {
+    this.setState({ allReservations: getReservations() })
+  }
+
   render() {
     return (
       <div className="App">
