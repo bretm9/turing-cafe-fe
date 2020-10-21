@@ -20,9 +20,12 @@ describe('Reservations', () => {
       "number": 6
       },
   ]
-  it('should render a Reservation', () => {
-    render(<Reservations allReservations={reservationData}/>)
 
+  beforeEach(() => {
+    render(<Reservations allReservations={reservationData}/>)
+  })
+
+  it('should render a Reservation', () => {
     expect(screen.getByText('Bret')).toBeInTheDocument();
     expect(screen.getByText('12/20')).toBeInTheDocument();
     expect(screen.getByText('6:00')).toBeInTheDocument();
