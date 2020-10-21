@@ -12,10 +12,11 @@ function Reservations(props) {
       </section>
     );
   });
+  return <section>{allReservationsToRender}</section>
 }
 
-Reservations.PropTypes = {
-  allReservations: PropTypes.array
-}
+// Reservations.PropTypes = {
+//   allReservations: PropTypes.array
+// }
 
 export default Reservations;
